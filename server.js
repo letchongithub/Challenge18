@@ -1,13 +1,12 @@
-
-const express =  require('express');
-const db = require('./config/connection');
-const routes = require('./routes');
+import express, { urlencoded, json } from 'express';
+import db from './config/connection';
+import routes from './routes';
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(urlencoded({ extended: true }));
+app.use(json());
 
 app.use(routes); 
 

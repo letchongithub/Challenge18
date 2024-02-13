@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+import { connect, connection } from 'mongoose';
 
-mongoose.connect(process.env.MONOGDB_URI || 'mongodb://localhost:27017/Thomas&Friends',{
+connect(process.env.MONOGDB_URI || 'mongodb://localhost:3000/Letchkov',{
     useNewUrlParser: true, 
     useUnifiedTopology: true,
 });
 
 
-module.exports = mongoose.connection
+export default connection
