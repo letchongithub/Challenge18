@@ -15,7 +15,7 @@ const ThoughtController = {
     try {
       const thought = await Thought.findOne({_id:req.params.thoughtId});
       if (!thought) {
-        res.status(404).json({ message: 'Thought not found' });
+        res.status(404).json({ message: 'Please enter your thought' });
       } else {
         res.json(thought);
       }
@@ -48,7 +48,7 @@ const ThoughtController = {
         new: true,
       });
       if (!thought) {
-        res.status(404).json({ message: 'Thought not found' });
+        res.status(404).json({ message: 'Please enter your thought.' });
       } else {
         res.json(thought);
       }
